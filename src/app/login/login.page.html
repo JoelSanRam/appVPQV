@@ -1,0 +1,29 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div class="body Aligner-container">
+    <img src="../../assets/img/viajoporqueviajom.svg" width="100" style="margin-bottom: 20px;" alt="logo">
+    <form [formGroup]="usuario" (ngSubmit)="ingresar()" (keyup.enter)="ingresar()" class="formularioLogin">
+      <h1 class="colorRosa h1Login AvertaBlack">Login</h1>
+      <ion-label class="leyendLogin">Ingresa tus credenciales para obtener acceso.</ion-label>
+
+      <div>
+        <label class="labelLogin" style="margin-bottom: 5px;" for="">Usuario</label>
+        <ion-input class="inputLogin" placeholder="Usuario" formControlName="email"></ion-input>
+        <ion-label color="danger" *ngIf="usuario.controls.email.errors?.required && (usuario.controls.email.touched || usuario.controls.email.dirty)">* El usuario es obligatorio </ion-label>
+      </div>
+
+
+      <label class="labelLogin" style="margin-bottom: 5px;" for="">Contraseña</label>
+      <ion-input type="password" placeholder="Contraseña" class="inputLogin" formControlName="password"></ion-input>
+      <ion-label color="danger" *ngIf="usuario.controls.password.errors?.required && (usuario.controls.password.touched || usuario.controls.password.dirty)">* La contraseña es obligatorio </ion-label>
+
+      <ion-button [disabled]="!usuario.valid || !funcionActiva" routerLink="/home/asistencia" class="btnLogin"  style="margin-top: 25px;" type="submit">Iniciar sesión</ion-button> 
+    </form>
+
+  </div>
+</ion-content>

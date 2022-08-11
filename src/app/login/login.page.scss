@@ -1,0 +1,41 @@
+.body{
+    background: linear-gradient(180deg, rgba(211, 19, 163, 1) 0%, rgba(41, 146, 208, 1) 100%);
+}
+
+.formularioLogin{
+    border-radius: 10px;
+    background-color: white;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.h1Login{
+    text-align: center;
+    font-size: 30px;
+}
+
+.leyendLogin{
+    color: #7E7E7E;
+    margin: 25px 0;
+    display: block;
+}
+
+.labelLogin{
+    color: #383838;
+    margin: 25px 0;
+    display: block;
+}
+
+.inputLogin{
+    border: #C3C3C3 1px solid;
+    border-radius: 6px;
+    padding-left: 8px !important;
+    color: #000;
+}
+
+.btnLogin{
+    width: 100%;
+    // border-radius: 50px !important;
+    --border-radius: 30px;
+}

@@ -1,0 +1,39 @@
+
+
+<ion-content>
+  <div class="bodyAsistencia">
+    <form [formGroup]="usuario" (ngSubmit)="registroAsistencia()" class="formAsistencia">
+      <h1 class="colorRosa h1Login Averta">Registra una asistencia</h1>
+      <ion-label class="leyendAsitencia">Ingresa el ID del asistente o escanea el código QR
+        impreso digital del evento para confirmar su registro.</ion-label>
+
+      <div>
+        <label class="labelAsistencia" style="margin-bottom: 5px;" for="">ID de registro:</label>
+        <div class="formularioAsistencia">
+          <ion-input class="inputAsistencia" placeholder="ID" formControlName="id"></ion-input>
+          <ion-icon class="qrAsistencia" (click)="registrar()" name="qr-code-outline"></ion-icon>
+        </div>
+        <ion-label color="danger" *ngIf="usuario.controls.id.errors?.required && (usuario.touched || usuario.dirty)">* El ID es obligatorio </ion-label>
+        <!-- <ion-label color="danger" *ngIf="usuario.controls.usuario.errors?.required && (usuario.touched || usuario.dirty)">* Campo obligatorio </ion-label> -->
+      </div>
+
+      <ion-button type="submit" class="btnAsistencia"  style="margin-top: 25px;" type="submit">Registrar</ion-button> 
+      <!-- [disabled]="!usuario.valid" -->
+    </form>
+
+  </div>
+  <div *ngIf="activo" class="bodyAsistencia">
+    <form action="" class="formDatos">
+
+      <span class="numeroRegistro">Número de registro</span>
+      <span class="spanTitulos">Nombre completo:</span>
+      <span class="spanDatos">{{nombre}}</span>
+
+      <span class="spanTitulos">Teléfono:</span>
+      <span class="spanDatos">{{phone}}</span>
+
+      <span class="spanTitulos">Correo electrónico:</span>
+      <span class="spanDatos">{{email}}</span>
+    </form>
+  </div>
+</ion-content>

@@ -1,0 +1,8 @@
+{
+  "name": "vpqv",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

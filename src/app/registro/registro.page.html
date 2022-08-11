@@ -1,0 +1,72 @@
+<ion-content>
+  <form class="formFiltro" [formGroup]="usuario" (ngSubmit)="filtrar(usuario.value.id)" action="">
+    <h1 class="colorRosa AvertaBlack">Reportes</h1>
+    <div class="formularioAsistencia">
+      <ion-input class="inputAsistencia" placeholder="Buscar por ID, nombre o correo" formControlName="id"></ion-input>
+      <ion-button type="submit" class="btnFiltrar" shape="round" color="success">
+        Filtrar
+      </ion-button>
+    </div>
+  </form>
+  <ion-list *ngIf="!plat">
+    <ion-item class="titulos" style="background-color: #516fbf;" color="primary">
+      <ion-label class="numeros LexendSemiBold marginTitulos">ID</ion-label>
+      <ion-label class="LexendSemiBold  marginTitulos" style="padding-left: 12px;">Nombre</ion-label>
+      <ion-label class="ion-text-wrap LexendSemiBold marginTitulos" style="text-align: right;">Asistencia Registrada
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="!plat">
+    <ion-item class="itemGeneral" *ngFor="let item of ionListado">
+      <ion-label class="numeros">
+        <h2>{{item.attendanceNumber}}</h2>
+        <h3>{{item.phone}}</h3>
+      </ion-label>
+      <ion-label>
+        <h2>{{item.name}}</h2>
+        <h3>{{item.email}}</h3>
+      </ion-label>
+      <ion-toggle color="success" boolean [checked]="item.attended" [value]="item.attended" (ionChange)="registrar( item.attended, item.attendanceNumber )" mode="ios">
+
+      </ion-toggle>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="plat">
+    <ion-item class="titulos" style="background-color: #516fbf;" color="primary">
+      <ion-label class="numerosTablet LexendSemiBold marginTitulos">ID</ion-label>
+      <ion-label class="numerosTablet LexendSemiBold  marginTitulos" style="padding-left: 12px; max-width: 140px;">Nombre</ion-label>
+      <ion-label class="numerosTablet LexendSemiBold  marginTitulos" style="padding-left: 12px;">Número</ion-label>
+      <ion-label class="LexendSemiBold  marginTitulos" style="padding-left: 12px;">Correo</ion-label>
+      <ion-label class="ion-text-wrap LexendSemiBold marginTitulos" style="text-align: right; max-width: 100px;">Asistencia Registrada
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="plat">
+    <ion-item class="itemGeneral" *ngFor="let item of ionListado">
+      <ion-label class="numerosTablet">
+        <h2>{{item.attendanceNumber}}</h2>
+      </ion-label>
+      <ion-label  class="numerosTablet" style="padding: 0;">
+        <h2>{{item.name}}</h2>
+      </ion-label >
+      <ion-label  class="numerosTablet">
+        <h3>{{item.phone}}</h3>
+      </ion-label>
+      <ion-label>
+        <h3>{{item.email}}</h3>
+      </ion-label>
+      <ion-toggle color="success" boolean [checked]="item.attended" [value]="item.attended" (ionChange)="registrar( item.attended, item.attendanceNumber )" mode="ios">
+
+      </ion-toggle>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-button type="submit" class="btnPDF" (click)="pdf()" expand="block" fill="outline" shape="round" color="success">
+      Descargar reporte completo <ion-icon name="download-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

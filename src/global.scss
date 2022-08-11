@@ -1,0 +1,111 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+@font-face {
+    font-family: Averta;
+    src: url(./assets/fonts/Averta.otf);
+}
+
+@font-face {
+    font-family: AvertaBlackItalic;
+    src: url(./assets/fonts/AvertaBlackItalic.otf);
+}
+
+@font-face {
+    font-family: Lexend;
+    src: url(./assets/fonts/Lexend-Regular.ttf);
+}
+
+@font-face {
+    font-family: LexendMedium;
+    src: url(./assets/fonts/Lexend-Medium.ttf);
+}
+
+@font-face {
+    font-family: LexendSemiBold;
+    src: url(./assets/fonts/Lexend-SemiBold.ttf);
+}
+
+
+* {
+    font-family: Lexend;
+}
+
+.Averta {
+    font-family: Averta;
+}
+
+.AvertaBlack {
+    font-family: AvertaBlackItalic;
+}
+
+.Lexend {
+    font-family: Lexend;
+}
+
+.LexendMedium {
+    font-family: LexendMedium;
+}
+
+.LexendSemiBold {
+    font-family: LexendSemiBold;
+}
+
+.Aligner-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 3;
+}
+
+.colorRosa {
+    color: rgba(211, 19, 163, 1);
+}
+
+.fondoRosa {
+    background-color: rgba(211, 19, 163, 1);
+}
+
+.colorAzul {
+    color: #516FBF;
+}
+
+.fondoAzul {
+    background-color: #516FBF;
+}
+
+.Exito .alert-wrapper {
+    // --background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(28, 203, 74, 1) 100%);
+}
+
+.Error .alert-wrapper {
+    // --background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(218,18,85,1) 100%);
+}
